@@ -19,6 +19,8 @@ body {
   height: 100%;
   max-width: 960px;
   width: 100%;
+  padding-right: 0.9rem;
+  padding-left: 0.9rem;
   margin-right: auto;
   margin-left: auto;
   color: #f76c6c;
@@ -27,11 +29,23 @@ body {
 .main-header {
   text-align: center;
   width: 100%;
-  margin-top: 5rem;
+  margin-top: 4rem;
 }
 
-.main-header h1 {
+.main-header h1,
+.score {
   font-size: 3rem;
+}
+
+.score {
+  transition: all 0.3s ease-in;
+  padding: 8px 10px;
+  background: #f8e9a1;
+  border-radius: 5px;
+  max-width: 80px;
+  margin-right: auto;
+  margin-left: auto;
+  text-align: center;
 }
 
 .grid {
@@ -39,9 +53,10 @@ body {
   display: grid;
   grid-template-columns: repeat(3, 100px);
   grid-gap: 0.8rem;
-  max-width: 320px;
+  max-width: 330px;
   margin-left: auto;
   margin-right: auto;
+  cursor: url("images/mallet.png"), auto;
 }
 
 .cell {
@@ -49,6 +64,98 @@ body {
   background: #24305e;
   border-radius: 50%;
   transform-style: preserve-3d;
-  transform: rotateX(45deg);
-  box-shadow: 0px 8px 2px rgba(0, 0, 0, 0.7);
+  transform: rotateX(60deg);
+  box-shadow: 0px 10px 2px rgba(0, 0, 0, 0.7);
+  position: relative;
+}
+
+.mole {
+  position: absolute;
+  background: url("images/mole.png") center no-repeat;
+  background-size: 80%;
+  width: 100%;
+  top: 0;
+  height: 0;
+  z-index: -1;
+  transition: all 0.4s;
+}
+
+.cell.up .mole {
+  height: 100%;
+  top: -80%;
+  z-index: 1;
+  transform: rotateX(-80deg);
+}
+
+/**** Modal styles*****/
+
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 1;
+  width: 100vw;
+  height: 100vh;
+  display: none;
+}
+
+.modal {
+  position: fixed;
+  top: 20%;
+  left: 0;
+  right: 0;
+  opacity: 0;
+  transform: translateY(-3rem);
+  transition: opacity 0.5s ease-out, transform 0.2s ease-out;
+  margin-right: auto;
+  margin-left: auto;
+  width: 50%;
+  background: #f8e9a1;
+  border: 5px solid #57c6f1d2;
+  z-index: -1;
+  color: #f76c6c;
+  text-align: center;
+  border-radius: 8px;
+}
+
+.modal__title {
+  font-size: 2rem;
+  font-weight: bold;
+  text-transform: capitalize;
+}
+
+.modal__text {
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  color: #1d1d1d;
+  font-size: 1.25rem;
+}
+
+.modal__actions {
+  margin-top: 2rem;
+  margin-bottom: 0.8rem;
+}
+
+.modal__button {
+  border: 0;
+  outline: none;
+  padding: 8px 12px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #ffffff;
+  background: #57c6f1d2;
+  cursor: pointer;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.open {
+  display: block !important;
+}
+
+.open__modal {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+  z-index: 200;
 }

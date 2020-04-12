@@ -12,21 +12,47 @@
     <link rel="stylesheet" type="text/css" media="screen" href="styles.css" />
   </head>
   <body>
+    <div class="backdrop"></div>
+    <div class="modal">
+      <h3 class="modal__title">Let's Play</h3>
+      <div class="modal__text">Start a new Game</div>
+      <div class="modal__actions">
+        <button class="modal__button">Ok</button>
+      </div>
+    </div>
     <div id="wrapper">
       <header class="main-header">
         <h1>Whack-a-mole!</h1>
       </header>
-      <div class="score"></div>
+      <div class="score">0</div>
       <div class="grid">
-        <div class="cell" id="1"></div>
-        <div class="cell" id="2"></div>
-        <div class="cell" id="3"></div>
-        <div class="cell" id="4"></div>
-        <div class="cell" id="5"></div>
-        <div class="cell" id="6"></div>
-        <div class="cell" id="7"></div>
-        <div class="cell" id="8"></div>
-        <div class="cell" id="9"></div>
+        <div class="cell" id="1">
+          <div class="mole"></div>
+        </div>
+        <div class="cell" id="2">
+          <div class="mole"></div>
+        </div>
+        <div class="cell" id="3">
+          <div class="mole"></div>
+        </div>
+        <div class="cell" id="4">
+          <div class="mole"></div>
+        </div>
+        <div class="cell" id="5">
+          <div class="mole"></div>
+        </div>
+        <div class="cell" id="6">
+          <div class="mole"></div>
+        </div>
+        <div class="cell" id="7">
+          <div class="mole"></div>
+        </div>
+        <div class="cell" id="8">
+          <div class="mole"></div>
+        </div>
+        <div class="cell" id="9">
+          <div class="mole"></div>
+        </div>
       </div>
     </div>
     <script src="app.js"></script>
